@@ -3,6 +3,9 @@
 
 <template>
   <div :class="[$style.homePage]">
-    <h2>HomePage</h2>
+    <herobar />
+    <filterbar />
+    <SliderWrapper />
+    <tweets />
   </div>
 </template>

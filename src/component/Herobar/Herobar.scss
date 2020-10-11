@@ -1,0 +1,29 @@
+/* stylelint-disable-next-line block-no-empty */
+.herobar {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-image: url("/static/image/plenaire_zaal_met_vlag.jpg");
+
+  .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font: 5.5rem/6rem Helvetica;
+    color: #fff;
+  }
+
+  &:before {
+    content: '';
+    @include size(100%);
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

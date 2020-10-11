@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "axios": "0.19.2",
+    "bootstrap": "^4.5.2",
     "core-js": "3.6.5",
     "detect-port": "^1.2.1",
     "fetch-polyfill": "^0.8.2",
@@ -48,6 +49,7 @@
     "seng-config": "^1.1.0",
     "seng-device-state-tracker": "^1.1.4",
     "seng-scss": "^1.2.5",
+    "uikit": "^3.5.8",
     "vue": "^2.2.5",
     "vue-i18n-manager": "^3.2.2",
     "vue-router": "^3.4.1",

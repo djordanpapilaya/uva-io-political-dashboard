@@ -11,6 +11,7 @@ export default {
     [SET_DEVICE_STATE](state, deviceState) {
       state.deviceState = deviceState;
     },
+
   },
   actions: {},
 };

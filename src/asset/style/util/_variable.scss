@@ -4,6 +4,17 @@
 $zLayout: default;
 
 // Sizes
+$gridSize: 4rem;
+
+$smallSpacing: $gridSize * 2; // 8rem
+$mediumSpacing: $gridSize * 5; // 20rem
+$largeSpacing: $gridSize * 10; // 40rem
+
+$wrapperWidth: $gridSize * 48; // 192rem;
+
+$gutterWidth: 5rem;
+$mobileGutterWidth: $gutterWidth * 0.5;
+
 
 // Colors
 

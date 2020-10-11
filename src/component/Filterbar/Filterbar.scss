@@ -1,0 +1,28 @@
+/* stylelint-disable-next-line block-no-empty */
+.filterbar {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  .title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .filters {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+
+  .filter {
+    font: 1.8rem/2rem Helvetica;
+    padding: 0 2.5rem;
+    cursor: pointer;
+
+    &.is-selected {
+      text-decoration: underline;
+      color: blue;
+    }
+  }
+}
