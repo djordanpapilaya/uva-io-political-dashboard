@@ -9,10 +9,16 @@
     margin-bottom: 2rem;
   }
 
+  .sub-title {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+
   .filters {
     display: flex;
     list-style: none;
     justify-content: center;
+    margin-bottom: 4.5rem;
   }
 
   .filter {
@@ -24,5 +30,29 @@
       text-decoration: underline;
       color: blue;
     }
+  }
+
+  .slider-wrapper {
+    text-align: center;
+  }
+
+  .range-slider {
+    margin-top: 1rem;
+  }
+
+  .negative-button {
+    background-color: #D50000;
+  }
+
+  .neutral-button {
+    background-color: #2962FF;
+  }
+
+  .positive-button {
+    background-color: #64DD17;
+  }
+
+  .tiles {
+    display: flex !important;
   }
 }

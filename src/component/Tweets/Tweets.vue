@@ -3,24 +3,27 @@
 
 <template>
   <div :class="[$style.tweets, 'wrapper']">
+    <div uk-spinner="ratio: 3" :class="[$style.spinner]" v-show="spinner"></div>
     <div :class="['content-wrapper']">
-      <div :class="[$style.tweet, 'uk-card uk-card-default uk-margin']">
-        <div :class="['uk-card-header']">
-          <h3 :class="['uk-card-title']">@Google development</h3>
+      <div :class="[$style.tweet, 'uk-card uk-card-default uk-margin', {[$style.negative]: tweet.Polarity < 0}, {[$style.positive]: tweet.Polarity > 0}]" v-for="(tweet, index) in allTweets" :key="index">
+        <div :class="['uk-card-header', $style.header]">
+          <h3 :class="['uk-card-title']">@<span v-text="tweet.Username"></span></h3>
+          <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">{{tweet.Tweetcreatedts}}</time></p>
+          <div :class="[$style.badge, 'uk-card-badge uk-label']" v-if="tweet.Polarity < 0">NEGATIVE TWEET</div>
+          <div :class="[$style.badge, 'uk-card-badge uk-label']" v-if="tweet.Polarity > 0">POSITIVE TWEET</div>
+          <div :class="[$style.badge, 'uk-card-badge uk-label']" v-if="tweet.Polarity === 0">NEUTRAL TWEET</div>
         </div>
-        <div :class="['uk-card-body']">Google “Great Barrington Declaration”. It doesn’t show up. It’s been shadow banned. Discussion of it has also been censored by Reddit. It’s not a conspiracy theory, not misinformation, not part of the “infodemic”. Big tech is just censoring dissent.</div>
-      </div>
-      <div :class="[$style.tweet, 'uk-card uk-card-default uk-margin']">
-        <div :class="['uk-card-header']">
-          <h3 :class="['uk-card-title']">@Brian Tong</h3>
+        <div class="uk-card-body">
+          <p v-text="tweet.Text">
+
+          </p>
+          <br>
+          <span class="uk-badge">{{tweet.Party}}</span>
+          <span class="uk-badge">{{tweet.Targeted}}</span>
+          <span class="uk-badge">{{tweet.Query}}</span>
+          <span class="uk-badge" v-if="tweet.Retweet">Retweet</span>
+          <span class="uk-badge">Sentiment: {{Math.round((tweet.Polarity+ Number.EPSILON) * 100) / 100}}</span>
         </div>
-        <div :class="['uk-card-body']">When you are kind to yourself it bleeds into how you treat others... there’s a lot of pain out there, compassion is a huge need unfortunately retaliation is the fad</div>
-      </div>
-      <div :class="[$style.tweet, 'uk-card uk-card-default uk-margin']">
-        <div :class="['uk-card-header']">
-          <h3 :class="['uk-card-title']">@Another twitter user....</h3>
-        </div>
-        <div :class="['uk-card-body']">SNL debate ‘fly’ sketch goes off the rails with Jim Carrey, along with Kenan Thompson as Herman Cain reincarnated</div>
       </div>
     </div>
   </div>

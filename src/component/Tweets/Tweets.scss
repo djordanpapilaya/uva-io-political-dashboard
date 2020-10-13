@@ -2,12 +2,38 @@
 .tweets {
   margin-top: 4.5rem;
   margin-bottom: 4.5rem;
+  position: relative;
 
   .tweet {
     transition: all .4s $easeInOutCubic;
 
+    .badge {
+      background-color: #2962FF;
+    }
+
+    &.positive {
+      .badge {
+        background-color: #64DD17;
+      }
+    }
+
+    &.negative {
+      .badge {
+        background-color: #D50000;
+      }
+    }
+
     &:hover {
       box-shadow: 8px 19px 15px rgba(0, 0, 0, 0.08);
     }
+  }
+
+  .spinner {
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: 2;
   }
 }

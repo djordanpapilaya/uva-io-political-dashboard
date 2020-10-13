@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/extensions
 import 'modernizr';
+import 'uikit'
 import Vue from 'vue';
 import VueI18nManager from 'vue-i18n-manager';
 import { sync } from 'vuex-router-sync';

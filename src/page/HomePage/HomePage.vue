@@ -5,7 +5,6 @@
   <div :class="[$style.homePage]">
     <herobar />
     <filterbar />
-    <SliderWrapper />
     <tweets />
   </div>
 </template>
