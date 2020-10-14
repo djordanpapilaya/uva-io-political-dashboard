@@ -72,7 +72,7 @@ export default {
 
       gateway.get('https://fhx66ke9pk.execute-api.eu-west-1.amazonaws.com/v1/politicalparties').then(result => {
         this.setPoliticalParties(result.data.body);
-        this.parties = result.data.body;
+        this.parties = result.data;
       });
 
       gateway.get('https://ajytiakpx9.execute-api.eu-west-1.amazonaws.com/v1/politicians').then(result => {
