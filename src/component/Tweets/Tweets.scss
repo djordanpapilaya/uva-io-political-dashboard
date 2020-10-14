@@ -28,6 +28,21 @@
     }
   }
 
+  .follow {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+    margin-left: 4rem;
+
+    &:last-child {
+      margin-left: 0;
+    }
+
+    &:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+
   .spinner {
     margin: 0 auto;
     position: absolute;

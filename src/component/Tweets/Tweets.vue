@@ -7,7 +7,11 @@
     <div :class="['content-wrapper']">
       <div :class="[$style.tweet, 'uk-card uk-card-default uk-margin', {[$style.negative]: tweet.Polarity < 0}, {[$style.positive]: tweet.Polarity > 0}]" v-for="(tweet, index) in allTweets" :key="index">
         <div :class="['uk-card-header', $style.header]">
-          <h3 :class="['uk-card-title']">@<span v-text="tweet.Username"></span></h3>
+          <h3 :class="['uk-card-title', $style.user]">@<span v-text="tweet.Username"></span>
+            <span :class="[$style.follow, 'uk-badge']">{{tweet.Followers}} Followers</span>
+            <span :class="[$style.follow, 'uk-badge']">{{tweet.Following}} Following</span>
+            <span :class="[$style.follow, 'uk-badge']">{{tweet.Totaltweets}} Tweets</span>
+          </h3>
           <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">{{tweet.Tweetcreatedts}}</time></p>
           <div :class="[$style.badge, 'uk-card-badge uk-label']" v-if="tweet.Polarity < 0">NEGATIVE TWEET</div>
           <div :class="[$style.badge, 'uk-card-badge uk-label']" v-if="tweet.Polarity > 0">POSITIVE TWEET</div>
