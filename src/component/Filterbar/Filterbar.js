@@ -8,7 +8,7 @@ export default {
   name: 'Filterbar',
   data() {
     return {
-      parties: {},
+      parties: [],
       leaders: {},
       currentIndex: -1,
       selectedFilter: "party/leader",
@@ -79,7 +79,11 @@ export default {
 
       gateway.get('https://fhx66ke9pk.execute-api.eu-west-1.amazonaws.com/v1/politicalparties').then(result => {
         this.setPoliticalParties(result.data.body);
-        this.parties = result.data;
+
+        if(this.parties === null) {
+          const tempParties = result.data;
+          this.parties = this.shuffle(tempParties);
+        }
       });
 
       gateway.get('https://ajytiakpx9.execute-api.eu-west-1.amazonaws.com/v1/politicians').then(result => {
@@ -118,5 +122,15 @@ export default {
         })
       });
     },
+    shuffle(a) {
+      let j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+      return a;
+    }
   }
 };
