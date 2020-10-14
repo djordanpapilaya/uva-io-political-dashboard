@@ -60,9 +60,16 @@ export default {
     },
     handleTabSwitch(partyIndex, index) {
       this.currentIndex = index;
-      const selectedParty = this.parties[this.currentIndex].Acronym;
-      this.setParty(selectedParty);
-      this.currentParty = this.parties[index];
+      let selectedParty = 'none';
+
+      if (index > -1) {
+        selectedParty = this.parties[this.currentIndex].Acronym;
+        this.setParty(selectedParty);
+        this.currentParty = this.parties[index];
+      } else {
+        selectedParty = 'none';
+        this.setParty(selectedParty);
+      }
     },
     selectSentiment(sentiment) {
       this.setSentiment(sentiment);
@@ -107,7 +114,6 @@ export default {
         Array.from(this.leaders).forEach((leader) => {
           if(this.currentParty.Acronym === leader.Party) {
             this.analysis.leaderInfo = leader;
-            console.log(leader);
           }
         })
       });

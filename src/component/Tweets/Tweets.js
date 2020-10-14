@@ -62,6 +62,13 @@ export default {
     getTweets() {
       const gateway = getValue(GATEWAY);
 
+      if (this.chosenParty === 'none') {
+        this.allTweets = [];
+        this.memTweets = [];
+        this.spinner = false;
+        return;
+      }
+
       gateway.get('https://osphg3rg04.execute-api.eu-west-1.amazonaws.com/v1/tweets', {
         params: {
           target: this.chosePreState,
